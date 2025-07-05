@@ -1,0 +1,683 @@
+<!--
+ * StarFrost
+ * (c) 2025 StarsX Studio
+ * Released under the MIT License.
+ */
+ -->
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>starfrost CSS - 现代化轻量CSS框架</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <link rel="stylesheet" href="starfrost.min.css">
+</head>
+<body>
+  <nav class="sf-navbar">
+    <div class="sf-navbar-container">
+      <a href="#" class="sf-navbar-brand">
+        <i class="fas fa-palette"></i>
+        <span class="sf-ml-sm">starfrost</span>
+      </a>
+      
+      <ul class="sf-navbar-nav">
+        <li class="sf-nav-item">
+          <a href="/" class="sf-nav-link active">框架首页</a>
+        </li>
+        <li class="sf-nav-item">
+          <a href="https://starsx.cn" class="sf-nav-link">团队官网</a>
+        </li>
+        <li class="sf-nav-item">
+          <div class="sf-dropdown">
+            <a class="sf-nav-link sf-dropdown-toggle">更多</a>
+            <ul class="sf-dropdown-menu">
+              <li><a class="sf-dropdown-item" href="">GitHub</a></li>
+              <li><a class="sf-dropdown-item" href="">抖音</a></li>
+              <li><a class="sf-dropdown-item" href="">BiliBili</a></li>
+              <li><a class="sf-dropdown-item" href="">微信公众号</a></li>
+            </ul>
+          </div>
+        </li>
+      </ul>
+      <button class="sf-btn sf-btn-primary sf-theme-toggle" id="themeToggle">
+        <i class="fas fa-moon" id="themeIcon"></i>
+      </button>
+    </div>
+  </nav>
+  <aside class="sf-sidebar" id="sidebar">
+    <div class="sf-sidebar-header">
+      <h4>组件导航</h4>
+    </div>
+    <div class="sf-sidebar-body">
+      <ul class="sf-sidebar-nav">
+        <li><a href="#layout" class="sf-sidebar-link">布局系统</a></li>
+        <li><a href="#buttons" class="sf-sidebar-link">按钮</a></li>
+        <li><a href="#cards" class="sf-sidebar-link">卡片</a></li>
+        <li><a href="#alerts" class="sf-sidebar-link">警告框</a></li>
+        <li><a href="#progress" class="sf-sidebar-link">进度条</a></li>
+        <li><a href="#tags" class="sf-sidebar-link">标签</a></li>
+        <li><a href="#badges" class="sf-sidebar-link">徽章</a></li>
+        <li><a href="#pagination" class="sf-sidebar-link">分页</a></li>
+        <li><a href="#loaders" class="sf-sidebar-link">加载动画</a></li>
+        <li><a href="#tooltips" class="sf-sidebar-link">工具提示</a></li>
+        <li><a href="#modals" class="sf-sidebar-link">模态框</a></li>
+        <li><a href="#forms" class="sf-sidebar-link">表单控件</a></li>
+        <li><a href="#tables" class="sf-sidebar-link">表格</a></li>
+        <li><a href="#listgroups" class="sf-sidebar-link">列表组</a></li>
+        <li><a href="#breadcrumbs" class="sf-sidebar-link">面包屑</a></li>
+        <li><a href="#carousels" class="sf-sidebar-link">轮播图</a></li>
+      </ul>
+    </div>
+  </aside>
+  <button class="sf-btn sf-btn-primary" id="sidebarToggle" style="position: fixed; top: 5rem; left: 0; z-index: 998;">
+    <i class="fas fa-bars"></i>
+  </button>
+  <div class="sf-toast-container" id="toastContainer"></div>
+  <div class="sf-modal" id="exampleModal">
+    <div class="sf-modal-dialog">
+      <div class="sf-modal-content">
+        <div class="sf-modal-header">
+          <h5 class="sf-modal-title">示例模态框</h5>
+          <button class="sf-modal-close" id="closeModal">&times;</button>
+        </div>
+        <div class="sf-modal-body">
+          <p>这是一个模态框示例。点击关闭按钮或外部区域关闭此对话框。</p>
+          <div class="sf-form-group">
+            <label class="sf-form-label">输入框示例</label>
+            <input type="text" class="sf-form-control" placeholder="输入内容">
+          </div>
+        </div>
+        <div class="sf-modal-footer">
+          <button class="sf-btn sf-btn-secondary" id="cancelModal">取消</button>
+          <button class="sf-btn sf-btn-primary">确定</button>
+        </div>
+      </div>
+    </div>
+  </div>
+  
+  <div class="sf-doc-container">
+    <header class="sf-doc-header">
+      <h1>starfrost CSS 框架</h1>
+      <p class="sf-text-secondary">现代化、轻量级、高度可定制的CSS框架</p>
+      <div class="sf-mt-md">
+        <span class="sf-tag sf-tag-primary">v3.0.0</span>
+        <span class="sf-tag sf-tag-success">响应式</span>
+        <span class="sf-tag sf-tag-info">40+组件</span>
+        <span class="sf-tag sf-tag-warning">主题切换</span>
+      </div>
+    </header>
+    
+    <section class="sf-doc-section">
+      <h2 class="sf-section-title">框架介绍</h2>
+      <p>starfrost 是一个现代化的 CSS 框架，专为快速开发现代网站而设计。它提供了40+精心设计的组件、实用的工具类，以及强大的主题定制功能。</p>
+      
+      <div class="sf-grid">
+        <div class="sf-doc-card">
+          <h3>主要特性</h3>
+          <ul class="feature-list">
+            <li>响应式设计，适配各种设备</li>
+            <li>深色/浅色主题一键切换</li>
+            <li>40+ 精心设计的UI组件</li>
+            <li>基于CSS变量的主题定制</li>
+            <li>轻量级，无依赖，仅需引入CSS与JS文件</li>
+            <li>文档和示例</li>
+          </ul>
+        </div>
+        
+        <div class="sf-doc-card">
+          <h3>主题切换</h3>
+          <p>starfrost 支持一键切换深色/浅色主题，并在切换时提供视觉反馈。</p>
+          <div class="sf-mt-md">
+            <button class="sf-btn sf-btn-outline-primary" id="showThemeInfo">
+              查看主题切换说明
+            </button>
+          </div>
+        </div>
+      </div>
+    </section>
+    
+    <section class="sf-doc-section" id="components">
+      <h2 class="sf-section-title">组件库</h2>
+      <p>以下是 starfrost 框架提供的所有组件及其使用示例（部分内容可能缺失，我们正在补充）：</p>
+      
+      <div class="sf-components">
+        <div class="component-card" id="layout">
+          <div class="component-header">
+            <span>布局系统</span>
+            <span class="sf-tag sf-tag-primary">网格 & 容器</span>
+          </div>
+          <div class="component-body">
+            <div class="component-preview">
+              <div class="sf-container">
+                <div class="sf-row">
+                  <div class="sf-col sf-col-4">
+                    <div class="sf-bg-primary sf-p-md sf-text-center sf-rounded-md">1/3</div>
+                  </div>
+                  <div class="sf-col sf-col-4">
+                    <div class="sf-bg-success sf-p-md sf-text-center sf-rounded-md">1/3</div>
+                  </div>
+                  <div class="sf-col sf-col-4">
+                    <div class="sf-bg-info sf-p-md sf-text-center sf-rounded-md">1/3</div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="component-code">
+              <button class="copy-btn">复制</button>
+              <pre>&lt;<span class="code-tag">div</span> <span class="code-attr">class</span>=<span class="code-value">"sf-container"</span>&gt;
+  &lt;<span class="code-tag">div</span> <span class="code-attr">class</span>=<span class="code-value">"sf-row"</span>&gt;
+    &lt;<span class="code-tag">div</span> <span class="code-attr">class</span>=<span class="code-value">"sf-col sf-col-4"</span>&gt;
+      &lt;<span class="code-tag">div</span> <span class="code-attr">class</span>=<span class="code-value">"sf-bg-primary sf-p-md"</span>&gt;1/3&lt;/<span class="code-tag">div</span>&gt;
+    &lt;/<span class="code-tag">div</span>&gt;
+    &lt;<span class="code-tag">div</span> <span class="code-attr">class</span>=<span class="code-value">"sf-col sf-col-4"</span>&gt;
+      &lt;<span class="code-tag">div</span> <span class="code-attr">class</span>=<span class="code-value">"sf-bg-success sf-p-md"</span>&gt;1/3&lt;/<span class="code-tag">div</span>&gt;
+    &lt;/<span class="code-tag">div</span>&gt;
+    &lt;<span class="code-tag">div</span> <span class="code-attr">class</span>=<span class="code-value">"sf-col sf-col-4"</span>&gt;
+      &lt;<span class="code-tag">div</span> <span class="code-attr">class</span>=<span class="code-value">"sf-bg-info sf-p-md"</span>&gt;1/3&lt;/<span class="code-tag">div</span>&gt;
+    &lt;/<span class="code-tag">div</span>&gt;
+  &lt;/<span class="code-tag">div</span>&gt;
+&lt;/<span class="code-tag">div</span>&gt;</pre>
+            </div>
+          </div>
+        </div>
+        <div class="component-card" id="buttons">
+          <div class="component-header">
+            <span>按钮组件</span>
+            <span class="sf-tag sf-tag-primary">sf-btn</span>
+          </div>
+          <div class="component-body">
+            <div class="component-preview">
+              <button class="sf-btn sf-btn-primary">主要按钮</button>
+              <button class="sf-btn sf-btn-success">成功按钮</button>
+              <button class="sf-btn sf-btn-outline-primary">轮廓按钮</button>
+              <button class="sf-btn sf-btn-danger sf-btn-lg">大按钮</button>
+            </div>
+            <div class="component-code">
+              <button class="copy-btn">复制</button>
+              <pre>&lt;<span class="code-tag">button</span> <span class="code-attr">class</span>=<span class="code-value">"sf-btn sf-btn-primary"</span>&gt;主要按钮&lt;/<span class="code-tag">button</span>&gt;
+&lt;<span class="code-tag">button</span> <span class="code-attr">class</span>=<span class="code-value">"sf-btn sf-btn-success"</span>&gt;成功按钮&lt;/<span class="code-tag">button</span>&gt;
+&lt;<span class="code-tag">button</span> <span class="code-attr">class</span>=<span class="code-value">"sf-btn sf-btn-outline-primary"</span>&gt;轮廓按钮&lt;/<span class="code-tag">button</span>&gt;
+&lt;<span class="code-tag">button</span> <span class="code-attr">class</span>=<span class="code-value">"sf-btn sf-btn-danger sf-btn-lg"</span>&gt;大按钮&lt;/<span class="code-tag">button</span>&gt;</pre>
+            </div>
+          </div>
+        </div>
+        <div class="component-card" id="cards">
+          <div class="component-header">
+            <span>卡片组件</span>
+            <span class="sf-tag sf-tag-primary">sf-card</span>
+          </div>
+          <div class="component-body">
+            <div class="component-preview">
+              <div class="sf-card" style="width: 100%">
+                <div class="sf-card-header">
+                  <h4>卡片标题</h4>
+                </div>
+                <div class="sf-card-body">
+                  <p>这是一个卡片示例，展示内容区域</p>
+                </div>
+                <div class="sf-card-footer">
+                  <button class="sf-btn sf-btn-sm sf-btn-primary">操作</button>
+                </div>
+              </div>
+            </div>
+            <div class="component-code">
+              <button class="copy-btn">复制</button>
+              <pre>&lt;<span class="code-tag">div</span> <span class="code-attr">class</span>=<span class="code-value">"sf-card"</span>&gt;
+  &lt;<span class="code-tag">div</span> <span class="code-attr">class</span>=<span class="code-value">"sf-card-header"</span>&gt;
+    &lt;<span class="code-tag">h4</span>&gt;卡片标题&lt;/<span class="code-tag">h4</span>&gt;
+  &lt;/<span class="code-tag">div</span>&gt;
+  &lt;<span class="code-tag">div</span> <span class="code-attr">class</span>=<span class="code-value">"sf-card-body"</span>&gt;
+    &lt;<span class="code-tag">p</span>&gt;这是一个卡片示例，展示内容区域&lt;/<span class="code-tag">p</span>&gt;
+  &lt;/<span class="code-tag">div</span>&gt;
+  &lt;<span class="code-tag">div</span> <span class="code-attr">class</span>=<span class="code-value">"sf-card-footer"</span>&gt;
+    &lt;<span class="code-tag">button</span> <span class="code-attr">class</span>=<span class="code-value">"sf-btn sf-btn-sm sf-btn-primary"</span>&gt;操作&lt;/<span class="code-tag">button</span>&gt;
+  &lt;/<span class="code-tag">div</span>&gt;
+&lt;/<span class="code-tag">div</span>&gt;</pre>
+            </div>
+          </div>
+        </div>
+        <div class="component-card" id="alerts">
+          <div class="component-header">
+            <span>警告框</span>
+            <span class="sf-tag sf-tag-primary">sf-alert</span>
+          </div>
+          <div class="component-body">
+            <div class="component-preview">
+              <div class="sf-alert sf-alert-primary">信息警告框</div>
+              <div class="sf-alert sf-alert-success">成功警告框</div>
+              <div class="sf-alert sf-alert-danger">危险警告框</div>
+              <div class="sf-alert sf-alert-warning">警告提示框</div>
+            </div>
+            <div class="component-code">
+              <button class="copy-btn">复制</button>
+              <pre>&lt;<span class="code-tag">div</span> <span class="code-attr">class</span>=<span class="code-value">"sf-alert sf-alert-primary"</span>&gt;信息警告框&lt;/<span class="code-tag">div</span>&gt;
+&lt;<span class="code-tag">div</span> <span class="code-attr">class</span>=<span class="code-value">"sf-alert sf-alert-success"</span>&gt;成功警告框&lt;/<span class="code-tag">div</span>&gt;
+&lt;<span class="code-tag">div</span> <span class="code-attr">class</span>=<span class="code-value">"sf-alert sf-alert-danger"</span>&gt;危险警告框&lt;/<span class="code-tag">div</span>&gt;
+&lt;<span class="code-tag">div</span> <span class="code-attr">class</span>=<span class="code-value">"sf-alert sf-alert-warning"</span>&gt;警告提示框&lt;/<span class="code-tag">div</span>&gt;</pre>
+            </div>
+          </div>
+        </div>
+        <div class="component-card" id="progress">
+          <div class="component-header">
+            <span>进度条</span>
+            <span class="sf-tag sf-tag-primary">sf-progress</span>
+          </div>
+          <div class="component-body">
+            <div class="component-preview">
+              <div class="sf-progress">
+                <div class="sf-progress-bar" style="width: 65%"></div>
+              </div>
+              <div class="sf-progress sf-mt-sm">
+                <div class="sf-progress-bar sf-progress-bar-success" style="width: 85%"></div>
+              </div>
+              <div class="sf-progress sf-mt-sm">
+                <div class="sf-progress-bar sf-progress-bar-danger" style="width: 45%"></div>
+              </div>
+            </div>
+            <div class="component-code">
+              <button class="copy-btn">复制</button>
+              <pre>&lt;<span class="code-tag">div</span> <span class="code-attr">class</span>=<span class="code-value">"sf-progress"</span>&gt;
+  &lt;<span class="code-tag">div</span> <span class="code-attr">class</span>=<span class="code-value">"sf-progress-bar"</span> <span class="code-attr">style</span>=<span class="code-value">"width: 65%"</span>&gt;&lt;/<span class="code-tag">div</span>&gt;
+&lt;/<span class="code-tag">div</span>&gt;
+
+&lt;<span class="code-tag">div</span> <span class="code-attr">class</span>=<span class="code-value">"sf-progress"</span>&gt;
+  &lt;<span class="code-tag">div</span> <span class="code-attr">class</span>=<span class="code-value">"sf-progress-bar sf-progress-bar-success"</span> <span class="code-attr">style</span>=<span class="code-value">"width: 85%"</span>&gt;&lt;/<span class="code-tag">div</span>&gt;
+&lt;/<span class="code-tag">div</span>&gt;
+
+&lt;<span class="code-tag">div</span> <span class="code-attr">class</span>=<span class="code-value">"sf-progress"</span>&gt;
+  &lt;<span class="code-tag">div</span> <span class="code-attr">class</span>=<span class="code-value">"sf-progress-bar sf-progress-bar-danger"</span> <span class="code-attr">style</span>=<span class="code-value">"width: 45%"</span>&gt;&lt;/<span class="code-tag">div</span>&gt;
+&lt;/<span class="code-tag">div</span>&gt;</pre>
+            </div>
+          </div>
+        </div>
+        <div class="component-card" id="tags">
+          <div class="component-header">
+            <span>标签</span>
+            <span class="sf-tag sf-tag-primary">sf-tag</span>
+          </div>
+          <div class="component-body">
+            <div class="component-preview">
+              <span class="sf-tag sf-tag-primary">主要标签</span>
+              <span class="sf-tag sf-tag-success">成功标签</span>
+              <span class="sf-tag sf-tag-danger">危险标签</span>
+              <span class="sf-tag sf-tag-info">信息标签</span>
+              <span class="sf-tag sf-tag-warning">警告标签</span>
+            </div>
+            <div class="component-code">
+              <button class="copy-btn">复制</button>
+              <pre>&lt;<span class="code-tag">span</span> <span class="code-attr">class</span>=<span class="code-value">"sf-tag sf-tag-primary"</span>&gt;主要标签&lt;/<span class="code-tag">span</span>&gt;
+&lt;<span class="code-tag">span</span> <span class="code-attr">class</span>=<span class="code-value">"sf-tag sf-tag-success"</span>&gt;成功标签&lt;/<span class="code-tag">span</span>&gt;
+&lt;<span class="code-tag">span</span> <span class="code-attr">class</span>=<span class="code-value">"sf-tag sf-tag-danger"</span>&gt;危险标签&lt;/<span class="code-tag">span</span>&gt;
+&lt;<span class="code-tag">span</span> <span class="code-attr">class</span>=<span class="code-value">"sf-tag sf-tag-info"</span>&gt;信息标签&lt;/<span class="code-tag">span</span>&gt;
+&lt;<span class="code-tag">span</span> <span class="code-attr">class</span>=<span class="code-value">"sf-tag sf-tag-warning"</span>&gt;警告标签&lt;/<span class="code-tag">span</span>&gt;</pre>
+            </div>
+          </div>
+        </div>
+        <div class="component-card" id="badges">
+          <div class="component-header">
+            <span>徽章</span>
+            <span class="sf-tag sf-tag-primary">sf-badge</span>
+          </div>
+          <div class="component-body">
+            <div class="component-preview">
+              <span class="sf-badge sf-badge-primary">主要徽章</span>
+              <span class="sf-badge sf-badge-success">成功徽章</span>
+              <span class="sf-badge sf-badge-danger">危险徽章</span>
+              <span class="sf-badge sf-badge-info">信息徽章</span>
+            </div>
+            <div class="component-code">
+              <button class="copy-btn">复制</button>
+              <pre>&lt;<span class="code-tag">span</span> <span class="code-attr">class</span>=<span class="code-value">"sf-badge sf-badge-primary"</span>&gt;主要徽章&lt;/<span class="code-tag">span</span>&gt;
+&lt;<span class="code-tag">span</span> <span class="code-attr">class</span>=<span class="code-value">"sf-badge sf-badge-success"</span>&gt;成功徽章&lt;/<span class="code-tag">span</span>&gt;
+&lt;<span class="code-tag">span</span> <span class="code-attr">class</span>=<span class="code-value">"sf-badge sf-badge-danger"</span>&gt;危险徽章&lt;/<span class="code-tag">span</span>&gt;
+&lt;<span class="code-tag">span</span> <span class="code-attr">class</span>=<span class="code-value">"sf-badge sf-badge-info"</span>&gt;信息徽章&lt;/<span class="code-tag">span</span>&gt;</pre>
+            </div>
+          </div>
+        </div>
+        <div class="component-card" id="pagination">
+          <div class="component-header">
+            <span>分页</span>
+            <span class="sf-tag sf-tag-primary">sf-pagination</span>
+          </div>
+          <div class="component-body">
+            <div class="component-preview">
+              <ul class="sf-pagination">
+                <li class="sf-page-item"><a class="sf-page-link" href="#">上一页</a></li>
+                <li class="sf-page-item"><a class="sf-page-link" href="#">1</a></li>
+                <li class="sf-page-item active"><a class="sf-page-link" href="#">2</a></li>
+                <li class="sf-page-item"><a class="sf-page-link" href="#">3</a></li>
+                <li class="sf-page-item"><a class="sf-page-link" href="#">下一页</a></li>
+              </ul>
+            </div>
+            <div class="component-code">
+              <button class="copy-btn">复制</button>
+              <pre>&lt;<span class="code-tag">ul</span> <span class="code-attr">class</span>=<span class="code-value">"sf-pagination"</span>&gt;
+  &lt;<span class="code-tag">li</span> <span class="code-attr">class</span>=<span class="code-value">"sf-page-item"</span>&gt;&lt;<span class="code-tag">a</span> <span class="code-attr">class</span>=<span class="code-value">"sf-page-link"</span> <span class="code-attr">href</span>=<span class="code-value">"#"</span>&gt;上一页&lt;/<span class="code-tag">a</span>&gt;&lt;/<span class="code-tag">li</span>&gt;
+  &lt;<span class="code-tag">li</span> <span class="code-attr">class</span>=<span class="code-value">"sf-page-item"</span>&gt;&lt;<span class="code-tag">a</span> <span class="code-attr">class</span>=<span class="code-value">"sf-page-link"</span> <span class="code-attr">href</span>=<span class="code-value">"#"</span>&gt;1&lt;/<span class="code-tag">a</span>&gt;&lt;/<span class="code-tag">li</span>&gt;
+  &lt;<span class="code-tag">li</span> <span class="code-attr">class</span>=<span class="code-value">"sf-page-item active"</span>&gt;&lt;<span class="code-tag">a</span> <span class="code-attr">class</span>=<span class="code-value">"sf-page-link"</span> <span class="code-attr">href</span>=<span class="code-value">"#"</span>&gt;2&lt;/<span class="code-tag">a</span>&gt;&lt;/<span class="code-tag">li</span>&gt;
+  &lt;<span class="code-tag">li</span> <span class="code-attr">class</span>=<span class="code-value">"sf-page-item"</span>&gt;&lt;<span class="code-tag">a</span> <span class="code-attr">class</span>=<span class="code-value">"sf-page-link"</span> <span class="code-attr">href</span>=<span class="code-value">"#"</span>&gt;3&lt;/<span class="code-tag">a</span>&gt;&lt;/<span class="code-tag">li</span>&gt;
+  &lt;<span class="code-tag">li</span> <span class="code-attr">class</span>=<span class="code-value">"sf-page-item"</span>&gt;&lt;<span class="code-tag">a</span> <span class="code-attr">class</span>=<span class="code-value">"sf-page-link"</span> <span class="code-attr">href</span>=<span class="code-value">"#"</span>&gt;下一页&lt;/<span class="code-tag">a</span>&gt;&lt;/<span class="code-tag">li</span>&gt;
+&lt;/<span class="code-tag">ul</span>&gt;</pre>
+            </div>
+          </div>
+        </div>
+        <div class="component-card" id="loaders">
+          <div class="component-header">
+            <span>加载动画</span>
+            <span class="sf-tag sf-tag-primary">sf-loader</span>
+          </div>
+          <div class="component-body">
+            <div class="component-preview">
+              <div class="sf-loader"></div>
+              <div class="sf-animate-pulse sf-mt-md" style="width: 100px; height: 20px; background: var(--sf-border);"></div>
+            </div>
+            <div class="component-code">
+              <button class="copy-btn">复制</button>
+              <pre>&lt;<span class="code-tag">div</span> <span class="code-attr">class</span>=<span class="code-value">"sf-loader"</span>&gt;&lt;/<span class="code-tag">div</span>&gt;
+
+&lt;!-- 脉冲动画 --&gt;
+&lt;<span class="code-tag">div</span> <span class="code-attr">class</span>=<span class="code-value">"sf-animate-pulse"</span> <span class="code-attr">style</span>=<span class="code-value">"width: 100px; height: 20px; background: var(--sf-border);"</span>&gt;&lt;/<span class="code-tag">div</span>&gt;</pre>
+            </div>
+          </div>
+        </div>
+        <div class="component-card" id="tooltips">
+          <div class="component-header">
+            <span>工具提示</span>
+            <span class="sf-tag sf-tag-primary">sf-tooltip</span>
+          </div>
+          <div class="component-body">
+            <div class="component-preview">
+              <span class="sf-tooltip">
+                悬停查看提示
+                <span class="sf-tooltip-text">这是一个工具提示示例</span>
+              </span>
+            </div>
+            <div class="component-code">
+              <button class="copy-btn">复制</button>
+              <pre>&lt;<span class="code-tag">span</span> <span class="code-attr">class</span>=<span class="code-value">"sf-tooltip"</span>&gt;
+  悬停查看提示
+  &lt;<span class="code-tag">span</span> <span class="code-attr">class</span>=<span class="code-value">"sf-tooltip-text"</span>&gt;这是一个工具提示示例&lt;/<span class="code-tag">span</span>&gt;
+&lt;/<span class="code-tag">span</span>&gt;</pre>
+            </div>
+          </div>
+        </div>
+        <div class="component-card" id="modals">
+          <div class="component-header">
+            <span>模态框</span>
+            <span class="sf-tag sf-tag-primary">sf-modal</span>
+          </div>
+          <div class="component-body">
+            <div class="component-preview">
+              <button class="sf-btn sf-btn-primary" id="showModal">打开模态框</button>
+            </div>
+            <div class="component-code">
+              <button class="copy-btn">复制</button>
+              <pre>&lt;<span class="code-tag">div</span> <span class="code-attr">class</span>=<span class="code-value">"sf-modal"</span> <span class="code-attr">id</span>=<span class="code-value">"exampleModal"</span>&gt;
+  &lt;<span class="code-tag">div</span> <span class="code-attr">class</span>=<span class="code-value">"sf-modal-dialog"</span>&gt;
+    &lt;<span class="code-tag">div</span> <span class="code-attr">class</span>=<span class="code-value">"sf-modal-content"</span>&gt;
+      &lt;<span class="code-tag">div</span> <span class="code-attr">class</span>=<span class="code-value">"sf-modal-header"</span>&gt;
+        &lt;<span class="code-tag">h5</span> <span class="code-attr">class</span>=<span class="code-value">"sf-modal-title"</span>&gt;标题&lt;/<span class="code-tag">h5</span>&gt;
+        &lt;<span class="code-tag">button</span> <span class="code-attr">class</span>=<span class="code-value">"sf-modal-close"</span>&gt;&amp;times;&lt;/<span class="code-tag">button</span>&gt;
+      &lt;/<span class="code-tag">div</span>&gt;
+      &lt;<span class="code-tag">div</span> <span class="code-attr">class</span>=<span class="code-value">"sf-modal-body"</span>&gt;
+        &lt;<span class="code-tag">p</span>&gt;内容区域&lt;/<span class="code-tag">p</span>&gt;
+      &lt;/<span class="code-tag">div</span>&gt;
+      &lt;<span class="code-tag">div</span> <span class="code-attr">class</span>=<span class="code-value">"sf-modal-footer"</span>&gt;
+        &lt;<span class="code-tag">button</span> <span class="code-attr">class</span>=<span class="code-value">"sf-btn sf-btn-secondary"</span>&gt;关闭&lt;/<span class="code-tag">button</span>&gt;
+        &lt;<span class="code-tag">button</span> <span class="code-attr">class</span>=<span class="code-value">"sf-btn sf-btn-primary"</span>&gt;保存&lt;/<span class="code-tag">button</span>&gt;
+      &lt;/<span class="code-tag">div</span>&gt;
+    &lt;/<span class="code-tag">div</span>&gt;
+  &lt;/<span class="code-tag">div</span>&gt;
+&lt;/<span class="code-tag">div</span>&gt;</pre>
+            </div>
+          </div>
+        </div>
+        <div class="component-card" id="forms">
+          <div class="component-header">
+            <span>表单控件</span>
+            <span class="sf-tag sf-tag-primary">sf-form-control</span>
+          </div>
+          <div class="component-body">
+            <div class="component-preview">
+              <div class="sf-form-group">
+                <label class="sf-form-label">输入框</label>
+                <input type="text" class="sf-form-control" placeholder="输入内容">
+              </div>
+              <div class="sf-form-group">
+                <label class="sf-form-label">选择框</label>
+                <select class="sf-form-control">
+                  <option>选项一</option>
+                  <option>选项二</option>
+                </select>
+              </div>
+              <div class="sf-form-check">
+                <input type="checkbox" class="sf-form-check-input">
+                <label>复选框</label>
+              </div>
+            </div>
+            <div class="component-code">
+              <button class="copy-btn">复制</button>
+              <pre>&lt;<span class="code-tag">div</span> <span class="code-attr">class</span>=<span class="code-value">"sf-form-group"</span>&gt;
+  &lt;<span class="code-tag">label</span> <span class="code-attr">class</span>=<span class="code-value">"sf-form-label"</span>&gt;输入框&lt;/<span class="code-tag">label</span>&gt;
+  &lt;<span class="code-tag">input</span> <span class="code-attr">type</span>=<span class="code-value">"text"</span> <span class="code-attr">class</span>=<span class="code-value">"sf-form-control"</span> <span class="code-attr">placeholder</span>=<span class="code-value">"输入内容"</span>&gt;
+&lt;/<span class="code-tag">div</span>&gt;</pre>
+            </div>
+          </div>
+        </div>
+        <div class="component-card" id="tables">
+          <div class="component-header">
+            <span>表格</span>
+            <span class="sf-tag sf-tag-primary">sf-table</span>
+          </div>
+          <div class="component-body">
+            <div class="component-preview">
+              <table class="sf-table sf-table-striped">
+                <thead>
+                  <tr>
+                    <th>#</th>
+                    <th>名称</th>
+                    <th>状态</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td>1</td>
+                    <td>项目一</td>
+                    <td><span class="sf-tag sf-tag-success">完成</span></td>
+                  </tr>
+                  <tr>
+                    <td>2</td>
+                    <td>项目二</td>
+                    <td><span class="sf-tag sf-tag-warning">进行中</span></td>
+                  </tr>
+                  <tr>
+                    <td>3</td>
+                    <td>项目三</td>
+                    <td><span class="sf-tag sf-tag-danger">待处理</span></td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+            <div class="component-code">
+              <button class="copy-btn">复制</button>
+              <pre>&lt;<span class="code-tag">table</span> <span class="code-attr">class</span>=<span class="code-value">"sf-table sf-table-striped"</span>&gt;
+  &lt;<span class="code-tag">thead</span>&gt;
+    &lt;<span class="code-tag">tr</span>&gt;
+      &lt;<span class="code-tag">th</span>&gt;#&lt;/<span class="code-tag">th</span>&gt;
+      &lt;<span class="code-tag">th</span>&gt;名称&lt;/<span class="code-tag">th</span>&gt;
+      &lt;<span class="code-tag">th</span>&gt;状态&lt;/<span class="code-tag">th</span>&gt;
+    &lt;/<span class="code-tag">tr</span>&gt;
+  &lt;/<span class="code-tag">thead</span>&gt;
+  &lt;<span class="code-tag">tbody</span>&gt;
+    &lt;<span class="code-tag">tr</span>&gt;
+      &lt;<span class="code-tag">td</span>&gt;1&lt;/<span class="code-tag">td</span>&gt;
+      &lt;<span class="code-tag">td</span>&gt;项目一&lt;/<span class="code-tag">td</span>&gt;
+      &lt;<span class="code-tag">td</span>&gt;&lt;<span class="code-tag">span</span> <span class="code-attr">class</span>=<span class="code-value">"sf-tag sf-tag-success"</span>&gt;完成&lt;/<span class="code-tag">span</span>&gt;&lt;/<span class="code-tag">td</span>&gt;
+    &lt;/<span class="code-tag">tr</span>&gt;
+    &lt;<span class="code-tag">tr</span>&gt;
+      &lt;<span class="code-tag">td</span>&gt;2&lt;/<span class="code-tag">td</span>&gt;
+      &lt;<span class="code-tag">td</span>&gt;项目二&lt;/<span class="code-tag">td</span>&gt;
+      &lt;<span class="code-tag">td</span>&gt;&lt;<span class="code-tag">span</span> <span class="code-attr">class</span>=<span class="code-value">"sf-tag sf-tag-warning"</span>&gt;进行中&lt;/<span class="code-tag">span</span>&gt;&lt;/<span class="code-tag">td</span>&gt;
+    &lt;/<span class="code-tag">tr</span>&gt;
+    &lt;<span class="code-tag">tr</span>&gt;
+      &lt;<span class="code-tag">td</span>&gt;3&lt;/<span class="code-tag">td</span>&gt;
+      &lt;<span class="code-tag">td</span>&gt;项目三&lt;/<span class="code-tag">td</span>&gt;
+      &lt;<span class="code-tag">td</span>&gt;&lt;<span class="code-tag">span</span> <span class="code-attr">class</span>=<span class="code-value">"sf-tag sf-tag-danger"</span>&gt;待处理&lt;/<span class="code-tag">span</span>&gt;&lt;/<span class="code-tag">td</span>&gt;
+    &lt;/<span class="code-tag">tr</span>&gt;
+  &lt;/<span class="code-tag">tbody</span>&gt;
+&lt;/<span class="code-tag">table</span>&gt;</pre>
+            </div>
+          </div>
+        </div>
+        <div class="component-card" id="listgroups">
+          <div class="component-header">
+            <span>列表组</span>
+            <span class="sf-tag sf-tag-primary">sf-list-group</span>
+          </div>
+          <div class="component-body">
+            <div class="component-preview">
+              <div class="sf-list-group">
+                <div class="sf-list-group-item active">第一项</div>
+                <div class="sf-list-group-item">第二项</div>
+                <div class="sf-list-group-item">第三项</div>
+              </div>
+            </div>
+            <div class="component-code">
+              <button class="copy-btn">复制</button>
+              <pre>&lt;<span class="code-tag">div</span> <span class="code-attr">class</span>=<span class="code-value">"sf-list-group"</span>&gt;
+  &lt;<span class="code-tag">div</span> <span class="code-attr">class</span>=<span class="code-value">"sf-list-group-item active"</span>&gt;第一项&lt;/<span class="code-tag">div</span>&gt;
+  &lt;<span class="code-tag">div</span> <span class="code-attr">class</span>=<span class="code-value">"sf-list-group-item"</span>&gt;第二项&lt;/<span class="code-tag">div</span>&gt;
+  &lt;<span class="code-tag">div</span> <span class="code-attr">class</span>=<span class="code-value">"sf-list-group-item"</span>&gt;第三项&lt;/<span class="code-tag">div</span>&gt;
+&lt;/<span class="code-tag">div</span>&gt;</pre>
+            </div>
+          </div>
+        </div>
+        <div class="component-card" id="breadcrumbs">
+          <div class="component-header">
+            <span>面包屑</span>
+            <span class="sf-tag sf-tag-primary">sf-breadcrumb</span>
+          </div>
+          <div class="component-body">
+            <div class="component-preview">
+              <nav class="sf-breadcrumb">
+                <div class="sf-breadcrumb-item">首页</div>
+                <div class="sf-breadcrumb-item">文档</div>
+                <div class="sf-breadcrumb-item active">组件</div>
+              </nav>
+            </div>
+            <div class="component-code">
+              <button class="copy-btn">复制</button>
+              <pre>&lt;<span class="code-tag">nav</span> <span class="code-attr">class</span>=<span class="code-value">"sf-breadcrumb"</span>&gt;
+  &lt;<span class="code-tag">div</span> <span class="code-attr">class</span>=<span class="code-value">"sf-breadcrumb-item"</span>&gt;首页&lt;/<span class="code-tag">div</span>&gt;
+  &lt;<span class="code-tag">div</span> <span class="code-attr">class</span>=<span class="code-value">"sf-breadcrumb-item"</span>&gt;文档&lt;/<span class="code-tag">div</span>&gt;
+  &lt;<span class="code-tag">div</span> <span class="code-attr">class</span>=<span class="code-value">"sf-breadcrumb-item active"</span>&gt;组件&lt;/<span class="code-tag">div</span>&gt;
+&lt;/<span class="code-tag">nav</span>&gt;</pre>
+            </div>
+          </div>
+        </div>
+        <div class="component-card" id="carousels">
+          <div class="component-header">
+            <span>轮播图</span>
+            <span class="sf-tag sf-tag-primary">sf-carousel</span>
+          </div>
+          <div class="component-body">
+            <div class="component-preview">
+              <div class="sf-carousel">
+                <div class="sf-carousel-inner">
+                  <div class="sf-carousel-item active" style="background-color: #4361ee;">
+                    <h3 class="sf-carousel-caption" style="color: white;">第一张轮播图</h3>
+                  </div>
+                  <div class="sf-carousel-item" style="background-color: #06d6a0;">
+                    <h3 class="sf-carousel-caption" style="color: white;">第二张轮播图</h3>
+                  </div>
+                </div>
+                <button class="sf-carousel-control prev">&lt;</button>
+                <button class="sf-carousel-control next">&gt;</button>
+                <div class="sf-carousel-indicators">
+                  <div class="sf-carousel-indicator active"></div>
+                  <div class="sf-carousel-indicator"></div>
+                </div>
+              </div>
+            </div>
+            <div class="component-code">
+              <button class="copy-btn">复制</button>
+              <pre>&lt;<span class="code-tag">div</span> <span class="code-attr">class</span>=<span class="code-value">"sf-carousel"</span>&gt;
+  &lt;<span class="code-tag">div</span> <span class="code-attr">class</span>=<span class="code-value">"sf-carousel-inner"</span>&gt;
+    &lt;<span class="code-tag">div</span> <span class="code-attr">class</span>=<span class="code-value">"sf-carousel-item active"</span> <span class="code-attr">style</span>=<span class="code-value">"background-color: #4361ee;"</span>&gt;
+      &lt;<span class="code-tag">h3</span> <span class="code-attr">class</span>=<span class="code-value">"sf-carousel-caption"</span> <span class="code-attr">style</span>=<span class="code-value">"color: white;"</span>&gt;第一张轮播图&lt;/<span class="code-tag">h3</span>&gt;
+    &lt;/<span class="code-tag">div</span>&gt;
+    &lt;<span class="code-tag">div</span> <span class="code-attr">class</span>=<span class="code-value">"sf-carousel-item"</span> <span class="code-attr">style</span>=<span class="code-value">"background-color: #06d6a0;"</span>&gt;
+      &lt;<span class="code-tag">h3</span> <span class="code-attr">class</span>=<span class="code-value">"sf-carousel-caption"</span> <span class="code-attr">style</span>=<span class="code-value">"color: white;"</span>&gt;第二张轮播图&lt;/<span class="code-tag">h3</span>&gt;
+    &lt;/<span class="code-tag">div</span>&gt;
+  &lt;/<span class="code-tag">div</span>&gt;
+  &lt;<span class="code-tag">button</span> <span class="code-attr">class</span>=<span class="code-value">"sf-carousel-control prev"</span>&gt;&amp;lt;&lt;/<span class="code-tag">button</span>&gt;
+  &lt;<span class="code-tag">button</span> <span class="code-attr">class</span>=<span class="code-value">"sf-carousel-control next"</span>&gt;&amp;gt;&lt;/<span class="code-tag">button</span>&gt;
+  &lt;<span class="code-tag">div</span> <span class="code-attr">class</span>=<span class="code-value">"sf-carousel-indicators"</span>&gt;
+    &lt;<span class="code-tag">div</span> <span class="code-attr">class</span>=<span class="code-value">"sf-carousel-indicator active"</span>&gt;&lt;/<span class="code-tag">div</span>&gt;
+    &lt;<span class="code-tag">div</span> <span class="code-attr">class</span>=<span class="code-value">"sf-carousel-indicator"</span>&gt;&lt;/<span class="code-tag">div</span>&gt;
+  &lt;/<span class="code-tag">div</span>&gt;
+&lt;/<span class="code-tag">div</span>&gt;</pre>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    
+    <section class="sf-doc-section">
+      <h2 class="sf-section-title">使用指南</h2>
+      
+      <div class="sf-grid">
+        <div class="sf-doc-card">
+          <h3>安装方法</h3>
+          <p>下载文件并自行引入：</p>
+          <p><a class="sf-nav-link" src="https://cdn.starfrostcss.com/starfrost.min.css">https://cdn.starfrostcss.com/starfrost.min.css</a></p>
+          <p><a class="sf-nav-link" src="https://cdn.starfrostcss.com/starfrost.min.js">https://cdn.starfrostcss.com/starfrost.min.js</a></p>
+          <div class="component-code">
+            <button class="copy-btn">复制</button>
+            <pre>&lt;<span class="code-tag">link</span> <span class="code-attr">rel</span>=<span class="code-value">"stylesheet"</span> 
+      <span class="code-attr">href</span>=<span class="code-value">"starfrost.min.css"</span>&gt;</pre>
+          </div>
+        </div>
+        <div class="sf-doc-card">
+          <h3>基本结构</h3>
+          <div class="component-code">
+            <button class="copy-btn">复制</button>
+            <pre>&lt;!DOCTYPE html&gt;
+&lt;<span class="code-tag">html</span> <span class="code-attr">lang</span>=<span class="code-value">"zh-CN"</span>&gt;
+&lt;<span class="code-tag">head</span>&gt;
+  &lt;<span class="code-tag">meta</span> <span class="code-attr">charset</span>=<span class="code-value">"UTF-8"</span>&gt;
+  &lt;<span class="code-tag">title</span>&gt;starfrost示例&lt;/<span class="code-tag">title</span>&gt;
+  &lt;<span class="code-tag">link</span> <span class="code-attr">rel</span>=<span class="code-value">"stylesheet"</span> <span class="code-attr">href</span>=<span class="code-value">"starfrost.min.css"</span>&gt;
+&lt;/<span class="code-tag">head</span>&gt;
+&lt;<span class="code-tag">body</span>&gt;
+  &lt;<span class="code-tag">nav</span> <span class="code-attr">class</span>=<span class="code-value">"sf-navbar"</span>&gt;
+    &lt;!-- 导航内容 --&gt;
+  &lt;/<span class="code-tag">nav</span>&gt;
+  
+  &lt;<span class="code-tag">div</span> <span class="code-attr">class</span>=<span class="code-value">"sf-container"</span>&gt;
+    &lt;!-- 页面内容 --&gt;
+  &lt;/<span class="code-tag">div</span>&gt;
+&lt;/<span class="code-tag">body</span>&gt;
+&lt;/<span class="code-tag">html</span>&gt;</pre>
+          </div>
+        </div>
+      </div>
+    </section>
+  </div>
+  <footer class="sf-footer">
+    <div class="sf-container">
+      <p>starfrost CSS 框架 - MIT 许可证</p>
+      <p class="sf-text-secondary">© 2023 starfrost Team. 保留所有权利。</p>
+      <div class="sf-mt-sm">
+        <span class="sf-tag sf-tag-primary">HTML</span>
+        <span class="sf-tag sf-tag-primary">CSS</span>
+        <span class="sf-tag sf-tag-primary">JavaScript</span>
+        <span class="sf-tag sf-tag-primary">Vue</span>
+        <span class="sf-tag sf-tag-primary">TypeScript</span>
+      </div>
+    </div>
+  </footer>
+  <script src="starfrost.min.js"></script>
+</body>
+</html>
