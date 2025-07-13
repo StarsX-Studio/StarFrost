@@ -72,7 +72,7 @@ Starforst 是一个现代化、轻量级的 CSS 框架，专为快速构建响�
 
 下载本地使用：
 ```
-<link rel="stylesheet" href="starfrost.main.css">
+<link rel="stylesheet" href="starfrost.min.css">
 <link rel="stylesheet" href="starfrost.min.js">
 ```
 
